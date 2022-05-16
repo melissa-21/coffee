@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="fil2.html">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Размер фото</title>
+</head>
+<body>
+ <div class="image77">
+<label for="theme">Выберите размер фото: </label>
+<select id="theme">
+    <option value="large">Large</option>
+    <option value="medium">Medium</option>
+    <option value="small">Small</option>
+</select>
+<script>
+
+    const select = document.querySelector('select');
+    const div = document.querySelector('div');
+    document.body.style.padding = '10px';
+
+    function update(bgImage, imRepeat, bgSize, imHeight, imWidth) {
+        div.style.backgroundImage = bgImage;
+        div.style.backgroundRepeat = imRepeat;
+        div.style.backgroundSize = bgSize;
+        div.style.backgroundWidth = imWidth;
+        div.style.backgroundHeight = imWidth;
+    }
+
+    select.onchange = function() {
+        if (select.value === 'large') {
+            update('url("./image/kit1.jpg")', 'no-repeat', '800px 700px')
+        }
+        else if (select.value === 'medium') {
+            update('url("./image/kit1.jpg")', 'no-repeat', '600px 450px')
+        }
+        else if (select.value === 'small') {
+            update('url("./image/kit1.jpg")', 'no-repeat', '400px 350px')
+        }
+    }
+
+</script>
+ </div>
+</body>
+
+</html>
